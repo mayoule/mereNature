@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS projets (
   nom varchar(60) NOT NULL,
   adresse varchar(160) COLLATE utf8_unicode_ci DEFAULT '' NOT NULL,
   description text,
-  fond_actuel float,
+  fond_necessaires float,
+  fond_actuels float,
   date_debut date NOT NULL,
   chef_de_projet varchar(60) NOT NULL,
   
@@ -67,6 +68,9 @@ CREATE TABLE IF NOT EXISTS competences_projets (
 CREATE TABLE IF NOT EXISTS inscrits_projets (
   idi  int(10) NOT NULL,
   idp  int(10) NOT NULL,
+  type enum("Je m'investis","Je suis de bonne volonté","J'ai une idée") NOT NULL,
+  fond float,
+  ressource text,
 
   PRIMARY KEY (idi,idp),
   FOREIGN KEY (idi) REFERENCES inscrits (id_in),
