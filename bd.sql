@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS mots_projets (
   idp  int(10) NOT NULL,
 
   PRIMARY KEY (idm,idp),
-  FOREIGN KEY (idm) REFERENCES competences (id_mot),
+  FOREIGN KEY (idm) REFERENCES competences (id_com),
   FOREIGN KEY (idp) REFERENCES projets (id_pro)
 );
 
@@ -102,11 +102,11 @@ CREATE TABLE IF NOT EXISTS inscrits_groupes (
 );
 
 CREATE TABLE IF NOT EXISTS evenements (
-  id_gr int(10) NOT NULL AUTO_INCREMENT,
+  id_ev int(10) NOT NULL AUTO_INCREMENT,
   nom varchar(60) NOT NULL,
   adresse varchar(160) COLLATE utf8_unicode_ci DEFAULT '' NOT NULL,
   description text,
   date_debut date NOT NULL,
   
-  PRIMARY KEY (id_gr)
+  PRIMARY KEY (id_ev)
 );
