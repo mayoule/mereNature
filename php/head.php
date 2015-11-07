@@ -8,13 +8,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+		  
+          <a class="navbar-brand" href="index.php"><img src="./image/bandeau_meme_couleur.png" alt="Ce qui nous unis" width=70px></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="./index.php">Accueil</a></li>
+            <li><a href="./cree_ta_nature.php">Crée ta nature</a></li>
+			<li><a href="./apropos.php">A propos</a></li>
+            <li><a href="./contact.php">Contact</a></li>
+			
           </ul>
         </div><!--/.nav-collapse -->
       </div>

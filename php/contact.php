@@ -7,12 +7,13 @@
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
-		<?php include("onglet.php"); ?>
+		&nbsp;   
+		<?php //include("onglet.php"); ?>
 		
 		
 
         <div id="main">
-		JE METS LE TEXTE QUE JE VEUX RAJOUTER ICI
+		Contact (Erwann en cours de redaction)
         </div>
         <?php include("footer.php");?>
     </body>
