@@ -14,4 +14,4 @@
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
      <!-- Customize CSS -->
-    <!--link href="./style_personnalise.css" rel="stylesheet"-->
+    <link href="./style_personnalise.css" rel="stylesheet">
