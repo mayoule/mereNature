@@ -8,10 +8,8 @@
         <?php include("menu.php"); ?>
 		<?php include("onglet.php"); ?>
         <?php include("acces_base/utilitaire.php"); ?>
-        <?php include("classe/Inscrit.php"); ?>
 
-		
-		
+
 
         <div id="main"><h1>Test</h1>
             <p>test</p>
@@ -23,15 +21,15 @@
                     </div>
                    <div class="form-group">
                         <label for="prenom">Prenom</label>
-                        <input type="prenom" class="form-control" id="prenom" placeholder="Prenom" name='prenom'>
+                        <input type="prenom"  id="prenom" placeholder="Prenom" name='prenom'>
                         </div>
                     <div class="form-group">
                         <label for="age">Age</label>
-                        <input type="age" class="form-control" id="age" placeholder="Age" name='age'>
+                        <input type="age"  id="age" placeholder="Age" name='age'>
                     </div>
                     <div class="form-group">
                         <label for="adresse">Adresse</label>
-                        <input type="adresse" class="form-control" id="adresse" placeholder="Adresse" name='adresse'>
+                        <input type="adresse"  id="adresse" placeholder="Adresse" name='adresse'>
                         </div> 
                     <button type="submit"  value='Valider'>Submit</button>
                 </form>
