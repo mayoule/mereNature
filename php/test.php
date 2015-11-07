@@ -8,14 +8,15 @@
         <?php include("menu.php"); ?>
 		<?php include("onglet.php"); ?>
         <?php include("acces_base/utilitaire.php"); ?>
-        <?php include("classe/Inscrit.php"); ?>
+        
 
 		
 		
 
         <div id="main"><h1>Test</h1>
             <?php     
-                $sql = "INSERT INTO inscrits (nom,prenom,age,adresse) VALUES ('Jzan','Lui',42,'Paname hein');";
+                //$donnees=array('5','4','5',4,5,'4');
+                $sql = 'SELECT * FROM inscrits where  id_in=(SELECT max(id_in) FROM inscrits)';
                 $pdo->query($sql);
              ?>
         </div>

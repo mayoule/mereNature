@@ -5,39 +5,12 @@ class Inscrit {
 	public $prenom = '';
 	public $age = 0;
 	public $adresse = '';
-
-
-/*
-  id_in int(10) NOT NULL AUTO_INCREMENT,
-  nom varchar(60) NOT NULL,
-  prenom varchar(60) NOT NULL,
-  age int,
-  adresse varchar(160) COLLATE utf8_unicode_ci DEFAULT '' NOT NULL,
-
-
-
-*/
-
-
-
-
 	/**
 		CONSTRUCTION :
 	**/
-
-
-
     public function __construct() {
 
     }
-
-
-
-
-
-
-
-
 	public function hydrate($donnees) {
 		try {
 			foreach ($donnees as $attribut => $valeur) {
@@ -51,7 +24,6 @@ class Inscrit {
 			return false;
 		}
 	}
-	
 	/**
 		SETTERS :
 	**/
@@ -70,9 +42,6 @@ class Inscrit {
 	public function setAdresse($adresse) {
 		$this->adresse = $adresse;
 	}
-
-
-
 	/**
 		GETTERS :
 	**/
@@ -93,43 +62,43 @@ class Inscrit {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	/**
 		FONCTIONS :
 	**/
-	public function getParrains() {
-		$sql = 'SELECT parrain FROM relations WHERE fillot = ' . $this->ide;
-		$request = $this->pdo->query($sql);
-		$parrains = array();
-		while ($donnees = $request->fetch()) {
-			$parrain = new Eleve($this->pdo);
-			$parrain->charger($donnees['parrain']);
-			$parrains[] = $parrain;
-		}
-		return $parrains;
+	public function AjoutCompetence($skill) {
+		//competence existante ?
+		$exist="SELECT id_com FROM competence WHERE nom=".$skill."";
+
+		//modif competence
+		$sql = 'INSERT INTO competences VALUES ('.$skill.')';		
+		//modif inscrit_competence
+		$sql1 = 'SELECT * FROM competences where  id_com=(SELECT max(id_com) FROM competences)';
+		$sql2 = 'INSERT INTO inscrits_competences VALUES ('.$this->id_in.', '.$sql1.')';
 	}
+
+
 	
+	public function CreerProjet($donnees,$motCle) {	
+		$sql = 'INSERT INTO projets VALUES ('.$donnees[0].','.$donnees[1].','.$donnees[2].','.$donnees[3].','.$donnees[4].','.$donnees[5].','.$donnees[6].','.$donnees[7].')';	
+		
+		//modif mots_projets
+		$sql1 = 'SELECT * FROM projets where  id_pro=(SELECT max(id_pro) FROM projets)';
+		$sql2 = 'INSERT INTO mots_projets VALUES ('.$this->id_in.', '.$sql1.')';
+
+		//modif competences_projets
+		$sql1 = 'SELECT * FROM projets where  id_pro=(SELECT max(id_pro) FROM projets)';
+		$sql2 = 'INSERT INTO competences_projets VALUES ('.$this->id_in.', '.$sql1.')';		
+
+	}	
+
+
+
+
+	public function CreerGroupe($donnees) {	
+		$sql = 'INSERT INTO projets VALUES ('.$donnees[0].','.$donnees[1].','.$donnees[2].','.$donnees[3].','.$donnees[4].','.$donnees[5].')';	
+	}
+
+
 
 
 	public function ajout_competence() {
