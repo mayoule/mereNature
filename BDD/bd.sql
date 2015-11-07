@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS competences_projets (
   FOREIGN KEY (idp) REFERENCES projets (id_pro)
 );
 
-CREATE TABLE IF NOT EXISTS inscrits_projets (
+CREATE TABLE IF NOT EXISTS investissements (
   idi  int(10) NOT NULL,
   idp  int(10) NOT NULL,
   type enum("Je m'investis","Je suis de bonne volonté","J'ai une idée") NOT NULL,
