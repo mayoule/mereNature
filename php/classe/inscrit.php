@@ -1,10 +1,26 @@
 <?php
 class Inscrit {
-	public $id = null;
-	public $nom = 0;
+	public $id_in = null;
+	public $nom = '';
 	public $prenom = '';
-	public $age = '';
-	public $adresse = 0;
+	public $age = 0;
+	public $adresse = '';
+
+
+/*
+  id_in int(10) NOT NULL AUTO_INCREMENT,
+  nom varchar(60) NOT NULL,
+  prenom varchar(60) NOT NULL,
+  age int,
+  adresse varchar(160) COLLATE utf8_unicode_ci DEFAULT '' NOT NULL,
+
+
+
+*/
+
+
+
+
 	/**
 		CONSTRUCTION :
 	**/
@@ -39,8 +55,8 @@ class Inscrit {
 	/**
 		SETTERS :
 	**/
-	public function setId($id) {
-		$this->id = $id;
+	public function setId($id_in) {
+		$this->id_in = $id_in;
 	}
 	public function setNom($nom) {
 		$this->nom = $nom;
@@ -61,7 +77,7 @@ class Inscrit {
 		GETTERS :
 	**/
 	public function getId() {
-		return intval($this->ide);
+		return intval($this->id_in);
 	}
 	public function getNom() {
 		return $this->nom;
@@ -73,7 +89,7 @@ class Inscrit {
 		return intval($this->annee);
 	}
 	public function getAdresse() {
-		return $this->src;
+		return $this->adresse;
 	}
 
 
