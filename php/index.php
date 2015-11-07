@@ -7,11 +7,13 @@
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
-		<?php include("onglet.php"); ?>
+		<?php //include("onglet.php"); ?>
 		
 		
-
-        <div id="main"><h1>Premier titre </h1>
+		
+        <div id="main">
+		<img  class="img-responsive" src="image/slogan.png" alt="Crée ta nature. La nature citoyenne" width=250em>
+		<h1>Premier titre </h1>
             <p>Mon premier paragraphe
             </p>
             <h2>Premier sous titre
