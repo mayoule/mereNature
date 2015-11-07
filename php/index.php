@@ -3,9 +3,13 @@
         </title>
     </head>
     <body>
+		
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
+		<?php include("pub.php"); ?>
 		<?php include("onglet.php"); ?>
+		
+		
 
         <div id="main"><h1>Premier titre </h1>
             <p>Mon premier paragraphe

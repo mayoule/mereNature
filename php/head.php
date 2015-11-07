@@ -1,4 +1,4 @@
-
+<div id="head">
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -19,3 +19,5 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+	<div id="fix-for-navbar-fixed-top-spacing" style="height: 42px;">&nbsp;</div>
+</div>
