@@ -76,6 +76,14 @@ function rechercheCompetencesDunInscrit($pdo,$id_in) {
 		return $row;
 	  }
 	}
-	
-	
+
+function ajoutCompetence($pdo,$nom) {
+    $sql = "INSERT INTO competences (nom) VALUES ('".$nom."');";
+    $pdo->query($sql);
+	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", SELECT id_com FROM competences WHERE nom='".$nom."');";
+	echo $sql;
+	INSERT INTO inscrits_competences (idi,idc) VALUES (1, (SELECT id_com FROM competences WHERE nom='dormir'));
+    $pdo->query($sql);
+    echo"<p>Inscritpion réussi</p>";	
+}
 ?>
