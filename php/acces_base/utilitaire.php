@@ -50,5 +50,32 @@ function getGroupeByID($pdo,$idg) {
 		return $row;
 	  }
 	}
+	
+function rechercheProjetsDunInscrit($pdo,$id_in) {
+    $stmt = $pdo->prepare("SELECT * FROM projets where id_pro IN (SELECT DISTINCT idp FROM inscrits_projets WHERE idi= ?) ");
+	if ($stmt->execute(array($id_in))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
+	
 
+function rechercheInscritByID($pdo,$id_in) {
+    $stmt = $pdo->prepare("SELECT * FROM inscrits where id_in = ?");
+	if ($stmt->execute(array($id_in))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
+	
+	
+function rechercheCompetencesDunInscrit($pdo,$id_in) {
+    $stmt = $pdo->prepare("SELECT * FROM competences where id_com IN (SELECT DISTINCT idc FROM inscrits_competences WHERE idi= ?) ");
+	if ($stmt->execute(array($id_in))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
+	
+	
 ?>

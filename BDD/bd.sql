@@ -47,6 +47,15 @@ CREATE TABLE IF NOT EXISTS projets (
   PRIMARY KEY (id_pro)
 );
 
+CREATE TABLE IF NOT EXISTS inscrits_projets (
+  idi  int(10) NOT NULL,
+  idp  int(10) NOT NULL,
+
+  PRIMARY KEY (idi,idp),
+  FOREIGN KEY (idi) REFERENCES inscrits (id_in),
+  FOREIGN KEY (idp) REFERENCES projets (id_pro)
+);
+
 
 CREATE TABLE IF NOT EXISTS mots_projets (
   idm  int(10) NOT NULL,
