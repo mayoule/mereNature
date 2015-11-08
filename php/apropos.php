@@ -1,5 +1,5 @@
 <?php include("doctype.php")?>
-        <title>A propos de nous
+        <title>Contact
         </title>
     </head>
     <body>

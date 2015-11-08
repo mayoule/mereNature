@@ -44,7 +44,8 @@
 		<br>
 		<fieldset>
 		<legend>Mes compétences : </legend>
-		Intitulé : <?php echo $rowIdentiteCompetences["nom"]?>
+		<p>Mes compétences actuelles : <?php echo $rowIdentiteCompetences["nom"]?></p>
+		<br/>
 		<?php if (!isset($_GET['id_in'])) {?>
 		 <a href="ajouterCompetence.php"><button type="button" class="btn btn-success">Ajouter une compétence à mon profil</button></a>
 			<?php

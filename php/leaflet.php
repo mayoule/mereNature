@@ -1,5 +1,5 @@
 <?php include("doctype.php")?>
-        <title>Nouvelle Page
+        <title>Carte
         </title>
 		 
  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
@@ -10,7 +10,6 @@
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
-		<?php include("onglet.php"); ?>
 		
 		<div id="map"></div>
         <div id="main">

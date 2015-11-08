@@ -13,7 +13,12 @@
 		
 
         <div id="main">
-		Contact (Erwann en cours de redaction)
+		<h3>Contacts : </h3>
+
+         <h4>Commentaires : armance01@hotmail.fr</h4>
+
+         <h4>Urgences : le 18 !</h4>
+
         </div>
         <?php include("footer.php");?>
     </body>
