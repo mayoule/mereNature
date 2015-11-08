@@ -5,9 +5,6 @@ try {
 	echo 'Echec de la connexion à la base de données';
 	exit();
 }
-function __autoload($class_name) {
-    include 'php/class/' . $class_name . '.php';
-}
 
 function remplirInscrit($pdo,$nom,$prenom,$age,$adresse,$login,$pass) {
     $sql = "INSERT INTO inscrits (nom,prenom,age,adresse,login,pass) VALUES ('".$nom."','".$prenom."',".$age.",'".$adresse."','".$login."','".$pass."');";
@@ -81,14 +78,10 @@ function ajoutCompetence($pdo,$nom) {
     $sql = "INSERT INTO competences (nom) VALUES ('".$nom."');";
     $pdo->query($sql);
 	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", SELECT id_com FROM competences WHERE nom='".$nom."');";
-	echo $sql;
-	INSERT INTO inscrits_competences (idi,idc) VALUES (1, (SELECT id_com FROM competences WHERE nom='dormir'));
     $pdo->query($sql);
     echo"<p>Inscritpion réussi</p>";	
 }
 
-
-<?php
 try {
 	$pdo = new PDO('mysql:host=localhost;dbname=mernat', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 } catch(Exception $e) {
