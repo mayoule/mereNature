@@ -1,24 +1,24 @@
 <?php include("doctype.php")?>
-        <title>Liste des Projets
+        <title>NListe des Groupes
         </title>
     </head>
 
     <body>
-		
+        
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
-		<?php include("pub.php"); ?>
-		<?php include("onglet.php"); ?>
+        <?php include("pub.php"); ?>
+        <?php include("onglet.php"); ?>
 
-		    <!-- Bootstrap core CSS -->
+            <!-- Bootstrap core CSS -->
         <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
          <!-- Customize CSS -->
         <link href="./style_personnalise.css" rel="stylesheet">
-		
+        
 
         <div id="main">
-		
+        
 
         <?php
         try {
@@ -49,7 +49,7 @@
             echo "<tr>";          
             for ($j=0; $j < 2; $j++) { 
                 if($j == 1){
-                    echo "<td><a href='projet.php?idp=".$result[$i][2]."'>".$result[$i][$j]."</a></td>";  
+                    echo "<td><a href='groupe.php?idg=".$result[$i][2]."'>".$result[$i][$j]."</a></td>";  
                 }else{
                     echo "<td>".$result[$i][$j]."</td>";  
                 }
