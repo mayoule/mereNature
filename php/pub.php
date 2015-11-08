@@ -12,7 +12,7 @@
     </ul>
   </li>
   <li><a href="#">Menu 2</a></li>
-  <li><a href="#">Menu 3</a></li>
+  &nbsp;  
 </ul>
                                                                                                
 </div>
