@@ -13,11 +13,20 @@
 		<?php
 			$idg=$_GET['idg'];
 			$row=getGroupeByID($pdo,$idg);
-			echo "<p> Nom : ".$row['nom']."</p>";
-			echo "<p> Adresse : ".$row['adresse']."</p>";
-			echo "<p> Description : ".$row['description']."</p>";
-			echo "<p> Createur : ".$row['createur']." </p>";
-		
+			echo "<table>";
+				echo "<tr>";
+					echo "<td> Nom : </td><td>".$row['nom']."</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Adresse :</td><td> ".$row['adresse']."</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Description : </td><td>".$row['description']."</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Createur : </td><td>".$row['createur']." </td>";
+				echo "</tr>";
+			echo "</table>";
 
 		if (isset($_SESSION["login"])) {
 			
