@@ -38,7 +38,7 @@
                             <input type="login"  id="login" placeholder="Login" name='login'>
 						</div>
 						<div class="form-group">
-                            <label for="pass">Adresse</label>
+                            <label for="pass">Pass</label>
                             <input type="password"  id="pass" placeholder="Pass" name='pass'>
 						</div>
 						
