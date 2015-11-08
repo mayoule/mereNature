@@ -7,7 +7,7 @@
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
-		<?php include("onglet.php"); ?>
+		<?php //include("onglet.php"); ?>
 		<?php include("acces_base/utilitaire.php"); ?>
 		
 
