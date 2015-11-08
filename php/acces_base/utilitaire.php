@@ -18,7 +18,7 @@ function getProjetByID($pdo,$idp) {
 		$row = $stmt->fetch();
 		return $row;
 	  }
-	}
+}
 
 function getGroupeByID($pdo,$idg) {
     $stmt = $pdo->prepare("SELECT * FROM groupes where id_gr= ? ");
@@ -26,7 +26,7 @@ function getGroupeByID($pdo,$idg) {
 		$row = $stmt->fetch();
 		return $row;
 	  }
-	}
+}
 
 function remplirInsPro($pdo,$idi,$idp) {
     $sql = "INSERT INTO inscrits_projets (idi,idp) VALUES (".$idi.",".$idp.");";
@@ -59,24 +59,8 @@ function seConnecter($pdo,$login,$pass) {
 		}
 	  }
 	}
-	}
+}
 
-function getProjetByID($pdo,$idp) {
-    $stmt = $pdo->prepare("SELECT * FROM projets where id_pro= ? ");
-	if ($stmt->execute(array($idp))) {
-		$row = $stmt->fetch();
-		return $row;
-	  }
-	}
-
-function getGroupeByID($pdo,$idg) {
-    $stmt = $pdo->prepare("SELECT * FROM groupes where id_gr= ? ");
-	if ($stmt->execute(array($idg))) {
-		$row = $stmt->fetch();
-		return $row;
-	  }
-	}
-	
 function rechercheProjetsDunInscrit($pdo,$id_in) {
     $stmt = $pdo->prepare("SELECT * FROM projets where id_pro IN (SELECT DISTINCT idp FROM inscrits_projets WHERE idi= ?) ");
 	if ($stmt->execute(array($id_in))) {
@@ -110,26 +94,6 @@ function ajoutCompetence($pdo,$nom) {
     $pdo->query($sql);
     echo"<p>Inscritpion réussi</p>";	
 }
-
-try {
-	$pdo = new PDO('mysql:host=localhost;dbname=mernat', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-} catch(Exception $e) {
-	echo 'Echec de la connexion à la base de données';
-	exit();
-}
-function __autoload($class_name) {
-    include 'php/class/' . $class_name . '.php';
-}
-
-function remplirInscrit($pdo,$nom,$prenom,$age,$adresse) {
-    $sql = "INSERT INTO inscrits (nom,prenom,age,adresse) VALUES ('".$nom."','".$prenom."',".$age.",'".$adresse."');";
-    $pdo->query($sql);
-    echo"<p>Inscritpion réussi</p>";
-}
-
-
-
-
 
  function CreerProjet($pdo,$nom,$adresse,$description,$fond_necessaires,$fond_actuels,$date_debut,$chef_de_projet,$motCle,$skill_useful) {	
 
@@ -278,17 +242,6 @@ function CreerGroupe($pdo,$nom,$adresse,$description,$createur,$motCle) {
 		$sql3 = $pdo->prepare("INSERT INTO competences_groupes (idc, idg)  VALUES (".$id_m.", ".$id_pro.")");	
 		$sql3->execute();
 	}
-
-	
-
 }
-
-
-
-
-
-
-?>
-
 
 ?>
