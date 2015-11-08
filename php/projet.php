@@ -20,7 +20,13 @@
 			echo "<p> Fonds actuels : ".$row['fond_actuels']." €</p>";
 			echo "<p> Date de début : ".$row['date_debut']." </p>";
 			echo "<p> Chef de projet : ".$row['chef_de_projet']." </p>";
-		?>
+		
+
+		if (isset($_SESSION["login"])) {
+			
+			echo	"<li><a href='rejoindreProjet.php?idp=".$idp."'>Rejoindre le projet !</a></li>";
+			 } ?>
+			
 
 
 
