@@ -17,13 +17,8 @@
 			echo "<p> Adresse : ".$row['adresse']."</p>";
 			echo "<p> Description : ".$row['description']."</p>";
 			echo "<p> Createur : ".$row['createur']." </p>";
-		
+		?>
 
-		if (isset($_SESSION["login"])) {
-			
-			echo	"<li><a href='rejoindreGroupe.php?idg=".$idg."'>Rejoindre le groupe !</a></li>";
-			 } ?>
-			
 
 
         </div>

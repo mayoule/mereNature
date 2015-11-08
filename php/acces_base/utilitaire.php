@@ -51,16 +51,4 @@ function getGroupeByID($pdo,$idg) {
 	  }
 	}
 
-function remplirInsPro($pdo,$idi,$idp) {
-    $sql = "INSERT INTO inscrits_projets (idi,idp) VALUES (".$idi.",".$idp.");";
-    $pdo->query($sql);
-    echo"<p>Bienvenue sur le projet !</p>";
-}
-
-function remplirInsGro($pdo,$idi,$idg) {
-    $sql = "INSERT INTO inscrits_groupes (idi,idg) VALUES (".$idi.",".$idg.");";
-    $pdo->query($sql);
-    echo"<p>Bienvenue dans le groupe !</p>";
-}
-
 ?>
