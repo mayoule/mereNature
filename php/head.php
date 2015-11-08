@@ -15,6 +15,7 @@
           <ul class="nav navbar-nav">
             <li><a href="./index.php">Accueil</a></li>
             <li><a href="./cree_ta_nature.php">Crée ta nature</a></li>
+			<li><a href="./seConnecter.php">Se Connecter</a></li>
 			<li><a href="./apropos.php">A propos</a></li>
             <li><a href="./contact.php">Contact</a></li>
 			
