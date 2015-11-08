@@ -23,42 +23,6 @@ viewer= null;
  */
 
  
-function initMap() {
-   
-    // ----- Traduction
-    translate();
-
-    // ----- Options
-    
-    var options= {
-        mode:'normal',
-		territory:'FXX',
-		proxy:'assets/proxy.php?url='
-    };
-
-    viewer= new Geoportal.Viewer.Default('viewerDiv', OpenLayers.Util.extend(
-        options,
-        // API keys configuration variable set by <Geoportal.GeoRMHandler.getConfig>
-        // variable contenant la configuration des clefs API remplie par <Geoportal.GeoRMHandler.getConfig>
-        window.gGEOPORTALRIGHTSMANAGEMENT===undefined? {'apiKey':APIkey} : gGEOPORTALRIGHTSMANAGEMENT)
-    );
-    if (!viewer) {
-        // problem ...
-        OpenLayers.Console.error(OpenLayers.i18n('new.instance.failed'));
-        return;
-    }
-   
-    // ----- Layers
-    viewer.addGeoportalLayers(['ORTHOIMAGERY.ORTHOPHOTOS','GEOGRAPHICALGRIDSYSTEMS.MAPS']);	
-    
-	var latitude
-	var longitude
-	navigator.geolocation.getCurrentPosition(function (position) {
-	latitude=position.coords.latitude; longitude=position.coords.longitude; });
-    // ----- Autres
-	viewer.getMap().setCenterAtLonLat(longitude,latitude,17);
-}
-
 /**
  * Function: loadAPI
  * Load the configuration related with the API keys.

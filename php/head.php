@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  
+		  <img src="./image/logo_cloud_fini.png" alt="Ce qui nous unis" width=25px>
           <a class="navbar-brand" href="index.php"><img src="./image/bandeau_meme_couleur.png" alt="Ce qui nous unis" width=70px></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">

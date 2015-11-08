@@ -90,10 +90,52 @@ function rechercheCompetencesDunInscrit($pdo,$id_in) {
 function ajoutCompetence($pdo,$nom) {
     $sql = "INSERT INTO competences (nom) VALUES ('".$nom."');";
     $pdo->query($sql);
-	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", SELECT id_com FROM competences WHERE nom='".$nom."');";
-    $pdo->query($sql);
-    echo"<p>Inscritpion réussi</p>";	
+	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", (SELECT id_com FROM competences WHERE nom='".$nom."'));";
+	$pdo->query($sql);
+    echo"<br><p>Inscritpion réussi</p>";	
 }
+
+function getXmlCoordsFromAdress($address)
+{
+$coords=array();
+$base_url="http://maps.googleapis.com/maps/api/geocode/xml?";
+// ajouter &region=FR si ambiguité (lieu de la requete pris par défaut)
+$request_url = $base_url . "address=" . urlencode($address).'&sensor=false';
+$xml = simplexml_load_file($request_url) or die("url not loading");
+$coords['lat']=$coords['lon']='';
+$coords['status'] = $xml->status ;
+if($coords['status']=='OK')
+{
+ $coords['lat'] = $xml->result->geometry->location->lat ;
+ $coords['lon'] = $xml->result->geometry->location->lng ;
+}
+return $coords;
+}
+
+
+
+function getXYFromInscrits($pdo)
+{
+	$stmt = $pdo-> prepare("SELECT * FROM inscrits");
+	$RESULTAT=array();
+	if ($stmt->execute(array())) {
+		
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$RESULTAT[$row['login']]=getXmlCoordsFromAdress($row['adresse']);
+			
+			
+	  }
+	}
+	//print_r($RESULTAT);
+	//print("\n");
+	
+	return $RESULTAT;
+}
+
+
+
+
+
 
  function CreerProjet($pdo,$nom,$adresse,$description,$fond_necessaires,$fond_actuels,$date_debut,$chef_de_projet,$motCle,$skill_useful) {	
 
