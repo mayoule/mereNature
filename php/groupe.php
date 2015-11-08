@@ -1,5 +1,5 @@
 <?php include("doctype.php")?>
-        <title>Projets</title>
+        <title>Groupes</title>
     
     </head>
     <body>
@@ -11,15 +11,12 @@
 
 		
 		<?php
-			$idp=$_GET['idp'];
-			$row=getProjetByID($pdo,$idp);
+			$idg=$_GET['idg'];
+			$row=getGroupeByID($pdo,$idg);
 			echo "<p> Nom : ".$row['nom']."</p>";
 			echo "<p> Adresse : ".$row['adresse']."</p>";
 			echo "<p> Description : ".$row['description']."</p>";
-			echo "<p> Fonds necessaires : ".$row['fond_necessaires']." €</p>";
-			echo "<p> Fonds actuels : ".$row['fond_actuels']." €</p>";
-			echo "<p> Date de début : ".$row['date_debut']." </p>";
-			echo "<p> Chef de projet : ".$row['chef_de_projet']." </p>";
+			echo "<p> Createur : ".$row['createur']." </p>";
 		?>
 
 

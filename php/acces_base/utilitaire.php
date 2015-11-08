@@ -33,6 +33,7 @@ function seConnecter($pdo,$login,$pass) {
 		}
 	  }
 	}
+	}
 
 function getProjetByID($pdo,$idp) {
     $stmt = $pdo->prepare("SELECT * FROM projets where id_pro= ? ");
@@ -41,5 +42,13 @@ function getProjetByID($pdo,$idp) {
 		return $row;
 	  }
 	}
-}
+
+function getGroupeByID($pdo,$idg) {
+    $stmt = $pdo->prepare("SELECT * FROM groupes where id_gr= ? ");
+	if ($stmt->execute(array($idg))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
+
 ?>
