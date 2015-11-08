@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS inscrits (
   prenom varchar(60) NOT NULL,
   age int,
   adresse varchar(160) COLLATE utf8_unicode_ci DEFAULT '' NOT NULL,
-  
+  login varchar(60) NOT NULL UNIQUE,
+  pass varchar(60) NOT NULL,
   PRIMARY KEY (id_in)
 );
 
