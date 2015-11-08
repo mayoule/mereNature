@@ -32,7 +32,7 @@
 
 
 
-        $sth = $pdo->prepare("SELECT nom,description,id_pro FROM projets");
+        $sth = $pdo->prepare("SELECT nom,description,id_gr FROM groupes");
         $sth->execute();
 
         $result = $sth->fetchAll();

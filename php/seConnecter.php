@@ -36,7 +36,8 @@
                 else{
                     seConnecter($pdo,$_GET['login'],$_GET['pass']);
 					if (isset($_SESSION["nom"])) {
-						 header('Location: geoportail.php');
+						 //header('Location: geoportail.php');
+                        header('Location: leaflet.php');
 					}
 					else {
 						unset($_GET["pass"]);
