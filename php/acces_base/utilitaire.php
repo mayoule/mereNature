@@ -90,7 +90,6 @@ function rechercheCompetencesDunInscrit($pdo,$id_in) {
 function ajoutCompetence($pdo,$nom) {
     $sql = "INSERT INTO competences (nom) VALUES ('".$nom."');";
     $pdo->query($sql);
-<<<<<<< HEAD
 	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", (SELECT id_com FROM competences WHERE nom='".$nom."'));";
 	$pdo->query($sql);
     echo"<br><p>Inscritpion réussi</p>";	
@@ -138,15 +137,6 @@ function getXYFromInscrits($pdo)
 
 
 
-
-
-=======
-	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", SELECT id_com FROM competences WHERE nom='".$nom."');";
-    $pdo->query($sql);
-    echo"<p>Inscritpion réussi</p>";	
-}
-
->>>>>>> origin/master
  function CreerProjet($pdo,$nom,$adresse,$description,$fond_necessaires,$fond_actuels,$date_debut,$chef_de_projet,$motCle,$skill_useful) {	
 
  	echo "on rentre ds la fonction";
@@ -296,11 +286,4 @@ function CreerGroupe($pdo,$nom,$adresse,$description,$createur,$motCle) {
 	}
 }
 
-<<<<<<< HEAD
-
-
-
-
-=======
 ?>
->>>>>>> origin/master
