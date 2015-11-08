@@ -12,6 +12,35 @@ function remplirInscrit($pdo,$nom,$prenom,$age,$adresse,$login,$pass) {
     echo"<p>Inscritpion réussi</p>";
 }
 
+function getProjetByID($pdo,$idp) {
+    $stmt = $pdo->prepare("SELECT * FROM projets where id_pro= ? ");
+	if ($stmt->execute(array($idp))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
+
+function getGroupeByID($pdo,$idg) {
+    $stmt = $pdo->prepare("SELECT * FROM groupes where id_gr= ? ");
+	if ($stmt->execute(array($idg))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
+
+function remplirInsPro($pdo,$idi,$idp) {
+    $sql = "INSERT INTO inscrits_projets (idi,idp) VALUES (".$idi.",".$idp.");";
+    $pdo->query($sql);
+    echo"<p>Bienvenue sur le projet !</p>";
+}
+
+function remplirInsGro($pdo,$idi,$idg) {
+    $sql = "INSERT INTO inscrits_groupes (idi,idg) VALUES (".$idi.",".$idg.");";
+    $pdo->query($sql);
+    echo"<p>Bienvenue dans le groupe !</p>";
+}
+
+
 function seConnecter($pdo,$login,$pass) {
 	
 	$stmt = $pdo->prepare("SELECT * FROM inscrits where login = ? and pass= ?");
