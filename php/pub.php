@@ -2,7 +2,7 @@
 <div id="pub">    
 &nbsp;                                            
 <ul>
-  <li><a href="#">Home</a></li>
+  <!--<li><a href="#">Home</a></li>
   <li>
     <a href="#">Menu 1</a>
     <ul>
@@ -12,7 +12,7 @@
     </ul>
   </li>
   <li><a href="#">Menu 2</a></li>
-  <li><a href="#">Menu 3</a></li>
+  <li><a href="#">Menu 3</a></li>-->
 </ul>
                                                                                                
 </div>
