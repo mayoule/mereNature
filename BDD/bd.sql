@@ -50,6 +50,9 @@ CREATE TABLE IF NOT EXISTS projets (
 CREATE TABLE IF NOT EXISTS inscrits_projets (
   idi  int(10) NOT NULL,
   idp  int(10) NOT NULL,
+  type enum("Je m'investis","Je suis de bonne volonté","J'ai une idée") DEFAULT "Je suis de bonne volonté",
+  fond float,
+  ressource text,
 
   PRIMARY KEY (idi,idp),
   FOREIGN KEY (idi) REFERENCES inscrits (id_in),
