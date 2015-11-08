@@ -14,10 +14,10 @@
 
         <div id="main">
 		
-            <p>A l'origine de l'aventure Fungi se trouvent six étudiants, aux profils différents,
-            lors du challenge Inter école organisé à Paris par le C3 lors de la COP21.</p>
+            <h4>A l'origine de l'aventure Fungi se trouvent six étudiants, aux profils différents,
+            lors du challenge Inter école organisé à Paris par le C3 lors de la COP21.</h4>
             
-            <table>
+            <table class='table table-striped'>
               <tr>
                 <td><img  class="IMG" src="image/orga/edouard.png" alt="Edouard" width=250em></td>
                 <td><p>Edouard<br/>
@@ -80,13 +80,13 @@
             </table>
             
 
-            <p>Rassemblés autour d'un même projet: faire naître la nature n'importe où.
+            <h4>Rassemblés autour d'un même projet: faire naître la nature n'importe où.
             Fort de cette expérience de partage des compétences, et pour répondre à un besoin du
             Biofablab de Toulouse, nous avons décidé de créer cette plateforme de Biomakers, où
             les compétences, les ressources et les envies de chacun peuvent s'exprimer.
             L'idée est de sensibiliser et de mettre en relation les personnes. C'est de faire
             comprendre aux citoyens que tous peuvent être acteurs, à leur manière, dans la lutte
-            contre le réchauffement climatique et développer la nature</p>
+            contre le réchauffement climatique et développer la nature</h4>
 
 
         </div>

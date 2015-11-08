@@ -13,7 +13,7 @@
 		<?php
 			$idg=$_GET['idg'];
 			$row=getGroupeByID($pdo,$idg);
-			echo "<table class='stable1'>";
+			echo "<table class='table table-striped'>";
 				echo "<tr>";
 					echo "<td> Nom : </td><td>".$row['nom']."</td>";
 				echo "</tr>";

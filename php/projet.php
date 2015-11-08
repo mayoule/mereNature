@@ -13,9 +13,9 @@
 		<?php
 			$idp=$_GET['idp'];
 			$row=getProjetByID($pdo,$idp);
-			echo "<table  class='table1'>";
+			echo "<table  class='table table-striped''>";
 				echo "<tr>";
-					echo "<td> Nom :</td><td> </td><td>".$row['nom']."</td>";
+					echo "<td> Nom :</td><td>".$row['nom']."</td>";
 				echo "</tr>";
 				echo "<tr>";
 					echo "<td> Adresse :</td><td> ".$row['adresse']."</td>";

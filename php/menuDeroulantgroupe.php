@@ -43,8 +43,8 @@
 
 
 
-        echo "<table>";
-        echo "<th>Nom Description</th>";
+        echo "<table class='table table-striped'>";
+        echo "<th>Nom </th><th> Description</th>";
          for ($i=0; $i < sizeof($result) ; $i++) { 
             echo "<tr>";          
             for ($j=0; $j < 2; $j++) { 

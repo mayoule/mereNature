@@ -1,7 +1,7 @@
 <div id="onglet">      
 	
-	<a class="btn btn-succes btn-lg" href="menuDeroulantprojet.php" role="button">Projets</a>
-	<a class="btn btn-succes btn-lg" href="menuDeroulantgroupe.php" role="button">Groupes</a>
+	<a class="btn btn-primary  btn-lg" href="menuDeroulantprojet.php" role="button">Projets</a>
+	<a class="btn btn-primary btn-lg" href="menuDeroulantgroupe.php" role="button">Groupes</a>
 </div>
 	<!--
 	
