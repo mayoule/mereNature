@@ -5,15 +5,41 @@ try {
 	echo 'Echec de la connexion à la base de données';
 	exit();
 }
-function __autoload($class_name) {
-    include 'php/class/' . $class_name . '.php';
-}
 
 function remplirInscrit($pdo,$nom,$prenom,$age,$adresse,$login,$pass) {
     $sql = "INSERT INTO inscrits (nom,prenom,age,adresse,login,pass) VALUES ('".$nom."','".$prenom."',".$age.",'".$adresse."','".$login."','".$pass."');";
     $pdo->query($sql);
     echo"<p>Inscritpion réussi</p>";
 }
+
+function getProjetByID($pdo,$idp) {
+    $stmt = $pdo->prepare("SELECT * FROM projets where id_pro= ? ");
+	if ($stmt->execute(array($idp))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+}
+
+function getGroupeByID($pdo,$idg) {
+    $stmt = $pdo->prepare("SELECT * FROM groupes where id_gr= ? ");
+	if ($stmt->execute(array($idg))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+}
+
+function remplirInsPro($pdo,$idi,$idp,$type,$fond,$ressource) {
+    $sql = "INSERT INTO inscrits_projets (idi,idp,type,fond,ressource) VALUES (".$idi.",".$idp.",'".$type."',".$fond.",'".$ressource."');";
+    $pdo->query($sql);
+    echo"<p>Bienvenue sur le projet !</p>";
+}
+
+function remplirInsGro($pdo,$idi,$idg) {
+    $sql = "INSERT INTO inscrits_groupes (idi,idg) VALUES (".$idi.",".$idg.");";
+    $pdo->query($sql);
+    echo"<p>Bienvenue dans le groupe !</p>";
+}
+
 
 function seConnecter($pdo,$login,$pass) {
 	
@@ -33,24 +59,8 @@ function seConnecter($pdo,$login,$pass) {
 		}
 	  }
 	}
-	}
+}
 
-function getProjetByID($pdo,$idp) {
-    $stmt = $pdo->prepare("SELECT * FROM projets where id_pro= ? ");
-	if ($stmt->execute(array($idp))) {
-		$row = $stmt->fetch();
-		return $row;
-	  }
-	}
-
-function getGroupeByID($pdo,$idg) {
-    $stmt = $pdo->prepare("SELECT * FROM groupes where id_gr= ? ");
-	if ($stmt->execute(array($idg))) {
-		$row = $stmt->fetch();
-		return $row;
-	  }
-	}
-	
 function rechercheProjetsDunInscrit($pdo,$id_in) {
     $stmt = $pdo->prepare("SELECT * FROM projets where id_pro IN (SELECT DISTINCT idp FROM inscrits_projets WHERE idi= ?) ");
 	if ($stmt->execute(array($id_in))) {
@@ -80,6 +90,7 @@ function rechercheCompetencesDunInscrit($pdo,$id_in) {
 function ajoutCompetence($pdo,$nom) {
     $sql = "INSERT INTO competences (nom) VALUES ('".$nom."');";
     $pdo->query($sql);
+<<<<<<< HEAD
 	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", (SELECT id_com FROM competences WHERE nom='".$nom."'));";
 	$pdo->query($sql);
     echo"<br><p>Inscritpion réussi</p>";	
@@ -129,6 +140,13 @@ function getXYFromInscrits($pdo)
 
 
 
+=======
+	$sql = "INSERT INTO inscrits_competences (idi,idc) VALUES (".$_SESSION["id_in"].", SELECT id_com FROM competences WHERE nom='".$nom."');";
+    $pdo->query($sql);
+    echo"<p>Inscritpion réussi</p>";	
+}
+
+>>>>>>> origin/master
  function CreerProjet($pdo,$nom,$adresse,$description,$fond_necessaires,$fond_actuels,$date_debut,$chef_de_projet,$motCle,$skill_useful) {	
 
  	echo "on rentre ds la fonction";
@@ -276,12 +294,13 @@ function CreerGroupe($pdo,$nom,$adresse,$description,$createur,$motCle) {
 		$sql3 = $pdo->prepare("INSERT INTO competences_groupes (idc, idg)  VALUES (".$id_m.", ".$id_pro.")");	
 		$sql3->execute();
 	}
-
-	
-
 }
 
+<<<<<<< HEAD
 
 
 
 
+=======
+?>
+>>>>>>> origin/master
