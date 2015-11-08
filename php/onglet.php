@@ -1,8 +1,7 @@
 <div id="onglet">      
 	
-	<button type="button" class="btn btn-success">Je suis de bonne volonté</button>
-	<button type="button" class="btn btn-success">Je m'investis</button>
-	<button type="button" class="btn btn-success">J'ai une idée</button>
+	<a class="btn btn-succes btn-lg" href="menuDeroulantprojet.php" role="button">Projets</a>
+	<a class="btn btn-succes btn-lg" href="menuDeroulantgroupe.php" role="button">Groupes</a>
 </div>
 	<!--
 	

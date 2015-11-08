@@ -8,18 +8,34 @@
         <?php include("menu.php"); ?>
 		<?php include("onglet.php"); ?>
         <?php include("acces_base/utilitaire.php"); ?>
-
+       <div id="main">
 		
 		<?php
 			$idp=$_GET['idp'];
 			$row=getProjetByID($pdo,$idp);
-			echo "<p> Nom : ".$row['nom']."</p>";
-			echo "<p> Adresse : ".$row['adresse']."</p>";
-			echo "<p> Description : ".$row['description']."</p>";
-			echo "<p> Fonds necessaires : ".$row['fond_necessaires']." €</p>";
-			echo "<p> Fonds actuels : ".$row['fond_actuels']." €</p>";
-			echo "<p> Date de début : ".$row['date_debut']." </p>";
-			echo "<p> Chef de projet : ".$row['chef_de_projet']." </p>";
+			echo "<table>";
+				echo "<tr>";
+					echo "<td> Nom :</td><td> </td><td>".$row['nom']."</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Adresse :</td><td> ".$row['adresse']."</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Description : </td><td>".$row['description']."</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Fonds necessaires :</td><td> ".$row['fond_necessaires']." €</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Fonds actuels : </td><td>".$row['fond_actuels']." €</td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Date de début : </td><td> ".$row['date_debut']." </td>";
+				echo "</tr>";
+				echo "<tr>";
+					echo "<td> Chef de projet :</td><td> ".$row['chef_de_projet']." </td>";
+				echo "</tr>";
+			echo "</table>";
 		
 
 		if (isset($_SESSION["login"])) {
@@ -28,7 +44,7 @@
 			 } ?>
 			
 
-
+	</div>
 
         </div>
 

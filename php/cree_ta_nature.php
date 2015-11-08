@@ -1,5 +1,5 @@
 <?php include("doctype.php")?>
-        <title>Nouvelle Page
+        <title>Cree ta Nature
         </title>
     </head>
     <body>
