@@ -12,9 +12,10 @@ navigator.geolocation.getCurrentPosition(function (position) {
 	map.setView([latitude, longitude]);
 });
 
-L.tileLayer ( geopUrl(APIkey,"GEOGRAPHICALGRIDSYSTEMS.MAPS"), 
+L.tileLayer ( geopUrl(APIkey,"GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE"), 
   {   attribution:'&copy; <a href="http://www.ign.fr/">IGN-France</a>', 
-      maxZoom:18 
+      maxZoom:14,
+	  opacity:0.35
   } ).addTo(map);
 	
 var r = new XMLHttpRequest();
