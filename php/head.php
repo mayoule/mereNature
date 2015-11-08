@@ -16,15 +16,16 @@
             <li><a href="./index.php">Accueil</a></li>
             <li><a href="./cree_ta_nature.php">Crée ta nature</a></li>
 			
-			
+			<li><a href="./apropos.php">A propos</a></li>
+      <li><a href="./contact.php">Contact</a></li>
       <?php
       if (isset($_SESSION["login"])) {
       
-        echo '<li><a href="./profil.php">Mon profil</a></li>';
+        
         echo '<li><a href="./leaflet.php">Carte</a></li>';
+        echo '<li><a href="./profil.php">Mon profil</a></li>';
        } ?>
-			<li><a href="./apropos.php">A propos</a></li>
-            <li><a href="./contact.php">Contact</a></li>
+			
 
         <?php 
       if (!isset($_SESSION["login"])) {
