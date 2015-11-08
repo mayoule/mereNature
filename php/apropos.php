@@ -54,7 +54,7 @@
                     Etudiant en géomatique à l’ENSG<br/>
 
                     « J’ai envie d’agir pour la planète et je veux apporter
-                    mes compétences à ceux qui ont des projets »</p>
+                    mes compétences à ceux qui ont des projets. »</p>
                 </td>
               </tr>
               <tr>

@@ -25,10 +25,12 @@
 		
         <div id="main">
 		<br>
-		<fieldset>
-		<legend>Identité</legend>
-		Nom : <?php echo $rowIdentiteInformation['nom'] ?>
-		Prénom : <?php echo $rowIdentiteInformation["prenom"]?>
+		<fieldset class="scheduler-border">
+		<legend class="scheduler-border">Identité</legend>
+		 <div class="control-group">
+		<label class="control-label input-label" for="startTime">Nom : </label><?php echo $rowIdentiteInformation['nom'] ?>
+		<label class="control-label input-label" for="startTime">Prénom : </label><?php echo $rowIdentiteInformation["prenom"]?>
+		</div>
 		</fieldset>
 		<br>
 		<fieldset>
