@@ -15,7 +15,19 @@
           <ul class="nav navbar-nav">
             <li><a href="./index.php">Accueil</a></li>
             <li><a href="./cree_ta_nature.php">Crée ta nature</a></li>
-			<li><a href="./seConnecter.php">Se Connecter</a></li>
+			<?php 
+			if (!isset($_SESSION["login"])) {
+			?>
+				<li><a href="./seConnecter.php">Se Connecter</a></li>
+			<?php
+			} else {
+			?>
+				<li><a href="./seDeconnecter.php">Se Deconnecter</a></li>
+			<?php
+			
+			}
+			?>
+			
 			<li><a href="./apropos.php">A propos</a></li>
             <li><a href="./contact.php">Contact</a></li>
 			

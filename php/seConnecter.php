@@ -35,6 +35,13 @@
             }
                 else{
                     seConnecter($pdo,$_GET['login'],$_GET['pass']);
+					if (isset($_SESSION["nom"])) {
+						 header('Location: geoportail.php');
+					}
+					else {
+						unset($_GET["pass"]);
+						header('Location: seConnecter.php');
+					}
                 }
             ?>
 			<a href="./inscription.php"><button type="button" class="btn btn-success">M'inscrire</button></a>

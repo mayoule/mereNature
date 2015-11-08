@@ -17,9 +17,7 @@ function remplirInscrit($pdo,$nom,$prenom,$age,$adresse,$login,$pass) {
 
 function seConnecter($pdo,$login,$pass) {
 	
-	$sql = "SELECT id_in FROM inscrits WHERE login=".$login." AND pass=".$pass.";";
-    
-    $stmt = $pdo->prepare("SELECT * FROM inscrits where login = ? and pass= ?");
+	$stmt = $pdo->prepare("SELECT * FROM inscrits where login = ? and pass= ?");
 	if ($stmt->execute(array($login,$pass))) {
 		while ($row = $stmt->fetch()) {
 			// dans ce cas, tout est ok, on peut démarrer notre session
