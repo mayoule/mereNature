@@ -9,8 +9,8 @@ function __autoload($class_name) {
     include 'php/class/' . $class_name . '.php';
 }
 
-function remplirInscrit($pdo,$nom,$prenom,$age,$adresse) {
-    $sql = "INSERT INTO inscrits (nom,prenom,age,adresse) VALUES ('".$nom."','".$prenom."',".$age.",'".$adresse."');";
+function remplirInscrit($pdo,$nom,$prenom,$age,$adresse,$login,$pass) {
+    $sql = "INSERT INTO inscrits (nom,prenom,age,adresse,login,pass) VALUES ('".$nom."','".$prenom."',".$age.",'".$adresse."','".$login."','".$pass."');";
     $pdo->query($sql);
     echo"<p>Inscritpion réussi</p>";
 }

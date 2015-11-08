@@ -32,7 +32,16 @@
                         <div class="form-group">
                             <label for="adresse">Adresse</label>
                             <input type="adresse"  id="adresse" placeholder="Adresse" name='adresse'>
-                            </div> 
+						</div>
+						<div class="form-group">
+                            <label for="login">Login</label>
+                            <input type="login"  id="login" placeholder="Login" name='login'>
+						</div>
+						<div class="form-group">
+                            <label for="pass">Adresse</label>
+                            <input type="password"  id="pass" placeholder="Pass" name='pass'>
+						</div>
+						
                         <button type="submit"  value='Valider'>Submit</button>
                     </form>
                 </fieldset>
@@ -40,7 +49,7 @@
             <?php
             }
                 else{
-                    remplirInscrit($pdo,$_GET['nom'],$_GET['prenom'],$_GET['age'],$_GET['adresse']);
+                    remplirInscrit($pdo,$_GET['nom'],$_GET['prenom'],$_GET['age'],$_GET['adresse'],$_GET['login'],$_GET['pass']);
                 }
             ?>
 
