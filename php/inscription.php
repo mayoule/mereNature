@@ -15,8 +15,10 @@
             <?php
                 if(empty($_GET["nom"]) or empty($_GET["prenom"]) or empty($_GET['age'])){
             ?>
-                <fieldset>
-                    <form method='get' action=#>
+                
+			<form method='get' action=#>
+				<fieldset>
+				<legend>Identité</legend>
                         <div >
                             <label for="nom">Nom</label>
                             <input type="nom"  id="nom" placeholder="Nom" name='nom' >
@@ -25,6 +27,9 @@
                             <label for="prenom">Prenom</label>
                             <input type="prenom"  id="prenom" placeholder="Prenom" name='prenom'>
                             </div>
+				</fieldset>
+				<fieldset>
+				<legend>Informations personnelles</legend>
                         <div class="form-group">
                             <label for="age">Age</label>
                             <input type="age"  id="age" placeholder="Age" name='age'>
@@ -33,6 +38,9 @@
                             <label for="adresse">Adresse</label>
                             <input type="adresse"  id="adresse" placeholder="Adresse" name='adresse'>
 						</div>
+				</fieldset>
+				<fieldset>
+				<legend>Identification</legend>
 						<div class="form-group">
                             <label for="login">Login</label>
                             <input type="login"  id="login" placeholder="Login" name='login'>
@@ -42,7 +50,7 @@
                             <input type="password"  id="pass" placeholder="Pass" name='pass'>
 						</div>
 						
-                        <button type="submit"  value='Valider'>Submit</button>
+                        <button type="submit"  value='Valider'>Valider</button>
                     </form>
                 </fieldset>
 
