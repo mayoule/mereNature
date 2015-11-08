@@ -9,7 +9,7 @@
 		<?php include("onglet.php"); ?>
         <?php include("acces_base/utilitaire.php"); ?>
 
-		
+		<div id="main">
 		<?php
 			$idg=$_GET['idg'];
 			$row=getGroupeByID($pdo,$idg);
@@ -34,7 +34,7 @@
 			 } ?>
 			
 
-
+		</div>
         </div>
 
         <?php include("footer.php");?>

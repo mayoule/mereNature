@@ -8,12 +8,12 @@
         <?php include("menu.php"); ?>
 		<?php include("onglet.php"); ?>
         <?php include("acces_base/utilitaire.php"); ?>
-       <div id="main">
-		
+       
+		<div id="main">
 		<?php
 			$idp=$_GET['idp'];
 			$row=getProjetByID($pdo,$idp);
-			echo "<table>";
+			echo "<table >";
 				echo "<tr>";
 					echo "<td> Nom :</td><td> </td><td>".$row['nom']."</td>";
 				echo "</tr>";
@@ -42,12 +42,8 @@
 			
 			echo	"<li><a href='rejoindreProjet.php?idp=".$idp."'>Rejoindre le projet !</a></li>";
 			 } ?>
+		</div>
 			
-
-	</div>
-
-        </div>
-
         <?php include("footer.php");?>
     </body>
 </html>
