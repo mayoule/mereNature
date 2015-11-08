@@ -1,10 +1,9 @@
 <?php include("doctype.php")?>
         <title>Nouvelle Page
         </title>
-		<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css" />
-<script type="text/javascript" src="leaflet/leaflet.js"></script>
-<script type="text/javascript" src="leaflet/leafletembed.js"></script>
-<style>#map{width:25%;heigth:25%}</style>
+		 
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<style>#map{height:500px}</style>
     </head>
     <body>
 		
@@ -14,10 +13,11 @@
 		<?php include("onglet.php"); ?>
 		
 		<div id="map"></div>
-<script>initmap();</script>
         <div id="main">
-		JE METS LE TEXTE QUE JE VEUX RAJOUTER ICI
+		
         </div>
         <?php include("footer.php");?>
+		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+		<script src="leaflet/leafletembed.js"></script>
     </body>
 </html>

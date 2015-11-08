@@ -106,8 +106,8 @@ $coords['lat']=$coords['lon']='';
 $coords['status'] = $xml->status ;
 if($coords['status']=='OK')
 {
- $coords['lat'] = $xml->result->geometry->location->lat ;
- $coords['lon'] = $xml->result->geometry->location->lng ;
+ $coords['lat'] = $xml->result->geometry->location->lat;
+ $coords['lon'] = $xml->result->geometry->location->lng;
 }
 return $coords;
 }
@@ -284,6 +284,25 @@ function CreerGroupe($pdo,$nom,$adresse,$description,$createur,$motCle) {
 		$sql3 = $pdo->prepare("INSERT INTO competences_groupes (idc, idg)  VALUES (".$id_m.", ".$id_pro.")");	
 		$sql3->execute();
 	}
+}
+
+
+function getXYFromProjet($pdo)
+{
+	$stmt = $pdo-> prepare("SELECT * FROM projets");
+	$RESULTAT=array();
+	if ($stmt->execute(array())) {
+		
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$RESULTAT[$row['id_pro']]=getXmlCoordsFromAdress($row['adresse']);
+			
+			
+	  }
+	}
+	//print_r($RESULTAT);
+	//print("\n");
+	
+	return $RESULTAT;
 }
 
 ?>

@@ -1,18 +1,56 @@
-var map;
-var ajaxRequest;
-var plotlist;
-var plotlayers=[];
+function geopUrl (key, layer, format)
+{  return "http://wxs.ign.fr/"+ key + "/wmts?LAYER=" + layer
+      +"&EXCEPTIONS=text/xml&FORMAT="+(format?format:"image/jpeg")
+      +"&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal"
+      +"&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}" ;
+}
+var APIkey= "6h7gnc76fmw25k5kug8cz9gg";
+var map = L.map('map').setView([48.85,2.35], 10);
 
-function initmap() {
-    // set up the map
-    map = new L.Map('map');
+navigator.geolocation.getCurrentPosition(function (position) {
+	latitude=position.coords.latitude; longitude=position.coords.longitude;
+	map.setView([latitude, longitude]);
+});
 
-    // create the tile layer with correct attribution
-    var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
+L.tileLayer ( geopUrl(APIkey,"GEOGRAPHICALGRIDSYSTEMS.MAPS"), 
+  {   attribution:'&copy; <a href="http://www.ign.fr/">IGN-France</a>', 
+      maxZoom:18 
+  } ).addTo(map);
+	
+var r = new XMLHttpRequest();
+r.open("POST", "server.php", true);
+r.onreadystatechange = function () {
+  if (r.readyState != 4 || r.status != 200) return;
+  var data = JSON.parse(r.responseText);
+  console.log(data.donnees);
+  addMarkers(data.donnees);
+  addBatiments(data.donnees_projet);
+};
+r.send(null);
 
-    // start the map in South-East England
-    map.setView(new L.LatLng(51.3, 0.7),9);
-    map.addLayer(osm);
+function addMarkers (markers) {
+	
+	var myIcon = L.icon({
+    iconUrl: 'image/badge_pers_plein.png',
+    iconRetinaUrl: 'image/badge_pers_plein.png',
+    iconSize: [40,47],
+    iconAnchor: [20,47],
+    popupAnchor: [0, -50]
+	});
+	for (var nom in markers) {
+		L.marker([markers[nom].lat[0], markers[nom].lon[0]],{icon: myIcon}).addTo(map).bindPopup(nom);
+	}
+}
+function addBatiments (markers) {
+	var myIcon = L.icon({
+    iconUrl: 'image/badge_projet_plein.png',
+    iconRetinaUrl: 'image/badge_projet_plein.png',
+    iconSize: [40,47],
+    iconAnchor: [20,47],
+    popupAnchor: [0, -50]
+});
+
+	for (var nom in markers) {
+		L.marker([markers[nom].lat[0], markers[nom].lon[0]], {icon: myIcon}).addTo(map).bindPopup(nom);
+	}
 }
