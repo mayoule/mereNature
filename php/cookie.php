@@ -12,8 +12,8 @@
 		<!--Setting new cookie
 		============================= -->
 		<?php
-			/*setcookie("lebgdu77",True,time()+60 * 60);*/
-			setcookie("lebgdu78",False,time()+60 * 60);
+			setcookie("lebgdu77",True,time()+60 * 60);
+			setcookie("lebgdu78",0,time()+60 * 60);
 			/*name is your cookie's name
 			value is cookie's value
 			$int is time of cookie expires*/
