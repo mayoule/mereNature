@@ -4,9 +4,11 @@ CREATE TABLE IF NOT EXISTS inscrits (
   prenom varchar(60) NOT NULL,
   age int,
   adresse varchar(160) COLLATE utf8_unicode_ci DEFAULT '' NOT NULL,
-  
+  login varchar(20) NOT NULL UNIQUE,
+  pass varchar(100) NOT NULL,
   PRIMARY KEY (id_in)
 );
+
 
 CREATE TABLE IF NOT EXISTS competences (
   id_com int(10) NOT NULL AUTO_INCREMENT,
