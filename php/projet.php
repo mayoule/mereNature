@@ -13,7 +13,7 @@
 		<?php
 			$idp=$_GET['idp'];
 			$row=getProjetByID($pdo,$idp);
-			echo "<table >";
+			echo "<table  class='table1'>";
 				echo "<tr>";
 					echo "<td> Nom :</td><td> </td><td>".$row['nom']."</td>";
 				echo "</tr>";
@@ -40,7 +40,7 @@
 
 		if (isset($_SESSION["login"])) {
 			
-			echo	"<li><a href='rejoindreProjet.php?idp=".$idp."'>Rejoindre le projet !</a></li>";
+			echo '<a class="btn btn-primary " href="rejoindreProjet.php?idp='.$idp.' role="button">Rejoindre le projet !</a>';
 			 } ?>
 		</div>
 			

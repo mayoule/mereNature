@@ -13,7 +13,7 @@
 		<?php
 			$idg=$_GET['idg'];
 			$row=getGroupeByID($pdo,$idg);
-			echo "<table>";
+			echo "<table class='stable1'>";
 				echo "<tr>";
 					echo "<td> Nom : </td><td>".$row['nom']."</td>";
 				echo "</tr>";
@@ -30,7 +30,8 @@
 
 		if (isset($_SESSION["login"])) {
 			
-			echo	"<li><a href='rejoindreGroupe.php?idg=".$idg."'>Rejoindre le groupe !</a></li>";
+			//echo	"<li><a href='rejoindreGroupe.php?idg=".$idg."'>Rejoindre le groupe !</a></li>";
+			echo '<a class="btn btn-primary " href="rejoindreGroupe.php?idg='.$idg.' role="button">Rejoindre le groupe !</a>';
 			 } ?>
 			
 

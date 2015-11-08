@@ -12,7 +12,7 @@
 		
 
         <div id="main">
-		JE METS LE TEXTE QUE JE VEUX RAJOUTER ICI
+		
         </div>
         <?php include("footer.php");?>
     </body>
