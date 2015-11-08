@@ -69,26 +69,50 @@ class Inscrit {
 		//competence existante ?
 		$exist="SELECT id_com FROM competence WHERE nom=".$skill."";
 
-		//modif competence
-		$sql = 'INSERT INTO competences VALUES ('.$skill.')';		
-		//modif inscrit_competence
-		$sql1 = 'SELECT * FROM competences where  id_com=(SELECT max(id_com) FROM competences)';
-		$sql2 = 'INSERT INTO inscrits_competences VALUES ('.$this->id_in.', '.$sql1.')';
+		//si la competence n existe pas
+		if ($exist == NULL){
+			$sql = 'INSERT INTO competences VALUES ('.$skill.')';			
+			$exist = 'SELECT * FROM competences where  id_com=(SELECT max(id_com) FROM competences)';
+		}			
+		//sinon, direct on remplit
+		$sql2 = 'INSERT INTO inscrits_competences VALUES ('.$this->id_in.', '.$exist.')';
 	}
 
 
 	
-	public function CreerProjet($donnees,$motCle) {	
+	public function CreerProjet($donnees,$motCle,$skill_useful) {	
 		$sql = 'INSERT INTO projets VALUES ('.$donnees[0].','.$donnees[1].','.$donnees[2].','.$donnees[3].','.$donnees[4].','.$donnees[5].','.$donnees[6].','.$donnees[7].')';	
+		$id_pro = 'SELECT * FROM projets where  id_pro=(SELECT max(id_pro) FROM projets)';
 		
-		//modif mots_projets
-		$sql1 = 'SELECT * FROM projets where  id_pro=(SELECT max(id_pro) FROM projets)';
-		$sql2 = 'INSERT INTO mots_projets VALUES ('.$this->id_in.', '.$sql1.')';
+		//MOT CLES DU PROJET
+		//on parcourt le tableau des mots cle
+		foreach ($motCle as $attribut) {
+			//mots cles existants ?
+			$exist="SELECT idm FROM competence WHERE nom=".$attribut."";
 
-		//modif competences_projets
-		$sql1 = 'SELECT * FROM projets where  id_pro=(SELECT max(id_pro) FROM projets)';
-		$sql2 = 'INSERT INTO competences_projets VALUES ('.$this->id_in.', '.$sql1.')';		
+			//si la competence n existe pas			
+			if ($exist == NULL){
+				//modif competence
+				$sql = 'INSERT INTO competences VALUES ('.$attribut.')';
+				$exist = 'SELECT * FROM competences where  id_com=(SELECT max(id_com) FROM competences)';
+			}
+			$sql2 = 'INSERT INTO mots_projets VALUES ('.$exist.', '.$id_pro.')';			
+		}
 
+		//COMPETENCES DU PROJET
+		//on parcourt le tableau des competences
+		foreach ($skill_useful as $attribut) {
+			//mots cles existants ?
+			$exist="SELECT idm FROM competence WHERE nom=".$attribut."";
+
+			//si la competence n existe pas			
+			if ($exist == NULL){
+				//modif competence
+				$sql = 'INSERT INTO competences VALUES ('.$attribut.')';
+				$exist = 'SELECT * FROM competences where  id_com=(SELECT max(id_com) FROM competences)';
+			}
+			$sql2 = 'INSERT INTO competences_projets VALUES ('.$exist.', '.$id_pro.')';			
+		}
 	}	
 
 
