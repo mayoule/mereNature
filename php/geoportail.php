@@ -64,12 +64,13 @@
     /*]]>*/--></style>
   </head>
   <body>
-  <?php include("head.php"); ?>
-        <?php include("menu.php"); ?>
+		<?php include("head.php"); ?>
+		<?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
 		<?php include("onglet.php"); ?>
 		
 	<div id="main">	
+		
 		<div id="viewerDiv"></div>
 		<div id='code'><a href="Geoportail/js/geoportail.js" alt="quickstart" id="example_jscode" target="_blank"></a></div>
 		<div id="footer"><a href="https://api.ign.fr/geoportail/document.do?doc=legal_mentions" id="legal" target="_blank"></a> - &copy;IGN 2008-2011</div>
