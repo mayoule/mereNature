@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="col-md-3">
-                <h2>Un biomaker ?</h2>
+                <h2>Un biomaker?</h2>
 
                 <p>Un biomaker c’est vous, c’est
                 moi, c’est nous ! C’est toute personne qui veut agir pour l’environnement

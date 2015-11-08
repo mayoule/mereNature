@@ -80,7 +80,7 @@
             </table>
             
 
-            <h4>Rassemblés autour d'un même projet: faire naître la nature n'importe où.
+            <h4>Rassemblés autour d'un même projet: <strong>faire naître la nature n'importe où</strong>.
             Fort de cette expérience de partage des compétences, et pour répondre à un besoin du
             Biofablab de Toulouse, nous avons décidé de créer cette plateforme de Biomakers, où
             les compétences, les ressources et les envies de chacun peuvent s'exprimer.
