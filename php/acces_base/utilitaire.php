@@ -28,8 +28,8 @@ function getGroupeByID($pdo,$idg) {
 	  }
 }
 
-function remplirInsPro($pdo,$idi,$idp) {
-    $sql = "INSERT INTO inscrits_projets (idi,idp) VALUES (".$idi.",".$idp.");";
+function remplirInsPro($pdo,$idi,$idp,$type,$fond,$ressource) {
+    $sql = "INSERT INTO inscrits_projets (idi,idp,type,fond,ressource) VALUES (".$idi.",".$idp.",'".$type."',".$fond.",'".$ressource."');";
     $pdo->query($sql);
     echo"<p>Bienvenue sur le projet !</p>";
 }
