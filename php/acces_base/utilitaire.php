@@ -33,5 +33,13 @@ function seConnecter($pdo,$login,$pass) {
 		}
 	  }
 	}
+
+function getProjetByID($pdo,$idp) {
+    $stmt = $pdo->prepare("SELECT * FROM projets where id_pro= ? ");
+	if ($stmt->execute(array($idp))) {
+		$row = $stmt->fetch();
+		return $row;
+	  }
+	}
 }
 ?>
