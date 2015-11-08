@@ -68,9 +68,10 @@
 		<?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
 		<?php include("onglet.php"); ?>
+		<?php include("acces_base/utilitaire.php"); ?>
 		
 	<div id="main">	
-		
+		<?php getXYFromInscrits($pdo) ?>
 		<div id="viewerDiv"></div>
 		<div id='code'><a href="Geoportail/js/geoportail.js" alt="quickstart" id="example_jscode" target="_blank"></a></div>
 		<div id="footer"><a href="https://api.ign.fr/geoportail/document.do?doc=legal_mentions" id="legal" target="_blank"></a> - &copy;IGN 2008-2011</div>
@@ -79,6 +80,8 @@
 		<script type="text/javascript" src="Geoportail/js/utils.js"></script>     
 		<script type="text/javascript" src="Geoportail/js/i18n/geoportail.js"></script>
 		<script type="text/javascript" src="Geoportail/js/geoportail.js"></script>
+		
+
 	</div>
         <?php include("footer.php");?>
   </body>

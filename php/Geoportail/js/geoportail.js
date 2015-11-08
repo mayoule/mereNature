@@ -57,6 +57,17 @@ function initMap() {
 	latitude=position.coords.latitude; longitude=position.coords.longitude; });
     // ----- Autres
 	viewer.getMap().setCenterAtLonLat(longitude,latitude,17);
+	
+
+		// create a map with default options in an element with the id "map1"
+		var markers= new OpenLayers.Layer.Markers("Repères");
+        viewer.getMap().addLayer(markers);
+        var size= new OpenLayers.Size(100,100);
+        var offset= new OpenLayers.Pixel(-(size.w/2), -(size.h/2));//centered
+        var ll= new OpenLayers.LonLat(4.25,45.780);
+        ll.transform(OpenLayers.Projection.CRS84, viewer.getMap().getProjection());
+        markers.addMarker(new OpenLayers.Marker(ll));
+
 }
 
 /**
