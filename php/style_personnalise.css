@@ -243,13 +243,13 @@ border-top:1px dotted #f00;}
   text-align: left;
   margin-left: 20%;
   margin-right: 20%;
-
-
 }
 
 #IMG{
     margin-left: 100px;
    }
 
-
-
+#main table li p{
+  padding: 20%;
+  margin-left: 20%;
+}
