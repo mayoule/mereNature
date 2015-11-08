@@ -46,6 +46,8 @@
                 <em>feuilles de style css
                 </em>
             </p>
+			<img  src="image/logo_cloud_fini.png" alt="Crée ta nature. La nature citoyenne" width=250em>
+			
             <a href="http://www.google.fr" title="LienGoogle">page google</a>
             <p>Un autre lien est present dans la page
             </p>

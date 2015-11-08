@@ -69,7 +69,68 @@
 		<?php include("pub.php"); ?>
 		<?php include("onglet.php"); ?>
 		<?php include("acces_base/utilitaire.php"); ?>
+		<?php $donnees = getXYFromInscrits($pdo); ?>
+	
+		<script>
+	
+function initMap() {
+   
+    // ----- Traduction
+    translate();
+
+    // ----- Options
+    
+    var options= {
+        mode:'normal',
+		territory:'FXX',
+		proxy:'assets/proxy.php?url='
+    };
+
+    viewer= new Geoportal.Viewer.Default('viewerDiv', OpenLayers.Util.extend(
+        options,
+        // API keys configuration variable set by <Geoportal.GeoRMHandler.getConfig>
+        // variable contenant la configuration des clefs API remplie par <Geoportal.GeoRMHandler.getConfig>
+        window.gGEOPORTALRIGHTSMANAGEMENT===undefined? {'apiKey':APIkey} : gGEOPORTALRIGHTSMANAGEMENT)
+    );
+    if (!viewer) {
+        // problem ...
+        OpenLayers.Console.error(OpenLayers.i18n('new.instance.failed'));
+        return;
+    }
+   
+    // ----- Layers
+    viewer.addGeoportalLayers(['ORTHOIMAGERY.ORTHOPHOTOS','GEOGRAPHICALGRIDSYSTEMS.MAPS']);	
+    
+	var latitude
+	var longitude
+	navigator.geolocation.getCurrentPosition(function (position) {
+	latitude=position.coords.latitude; longitude=position.coords.longitude; });
+    // ----- Autres
+	viewer.getMap().setCenterAtLonLat(longitude,latitude,17);
+	
+
+		// create a map with default options in an element with the id "map1"
+		var markers= new OpenLayers.Layer.Markers("Repères");
+        viewer.getMap().addLayer(markers);
+        var size= new OpenLayers.Size(100,100);
+        var offset= new OpenLayers.Pixel(-(size.w/2), -(size.h/2));//centered
 		
+		
+		
+	<?php 
+		foreach(array_keys($donnees) as $key)
+		{
+			$lon= $donnees[$key]["lon"] ;
+			$lat= $donnees[$key]["lat"] ;
+		
+			echo "var ll= new OpenLayers.LonLat('".$lon."','".$lat."');";
+			echo "ll.transform(OpenLayers.Projection.CRS84, viewer.getMap().getProjection());";
+			echo "markers.addMarker(new OpenLayers.Marker(ll));";
+		}
+	?>	
+}
+
+</script>
 	<div id="main">	
 		<?php getXYFromInscrits($pdo) ?>
 		<div id="viewerDiv"></div>
