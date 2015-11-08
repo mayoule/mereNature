@@ -157,12 +157,13 @@ function getXYFromInscrits($pdo)
 	$stmt = $pdo->query("SELECT LAST_INSERT_ID()");
 	$result= $stmt->fetch(PDO::FETCH_ASSOC);
 	$id_pro= $result['LAST_INSERT_ID()'];
+	echo "<p>Le projet a été ajouté</p>"
 
 	//MOT CLES DU PROJET
 	//on parcourt le tableau des mots cle
 	foreach ($motCle as $attribut) {
 		//mots cles existants ?
-		echo $attribut;
+		
 
 		$exist=$pdo->prepare("SELECT * FROM competences WHERE nom='".$attribut."'");
 		$exist->execute();
@@ -172,11 +173,11 @@ function getXYFromInscrits($pdo)
 
 		//si la competence n existe pas			
 		if ($result1){
-			echo "deja fait!";
+			
 			$id_m = $result1['id_com'];
 		}else
 			{
-			echo "nul";
+			
 			//modif competence
 			$sql2 = $pdo->prepare("INSERT INTO competences (nom)  VALUES ('".$attribut."')");
 			$sql2->execute();
@@ -195,7 +196,7 @@ function getXYFromInscrits($pdo)
 	//on parcourt le tableau des competences
 	foreach ($skill_useful as $attribut) {
 		//mots cles existants ?
-		echo $attribut;
+		
 
 		$exist=$pdo->prepare("SELECT * FROM competences WHERE nom='".$attribut."'");
 		$exist->execute();
@@ -209,19 +210,19 @@ function getXYFromInscrits($pdo)
 
 		//si la competence n existe pas			
 		if ($result5){
-			echo "deja fait!";
+			
 			$id_m1 = $result5['id_com'];
 		}else
 			{
 			//modif competence
-			echo "c est nul";
+			
 			$sql4 = $pdo->prepare("INSERT INTO competences (nom)  VALUES ('".$attribut."')");
 			$sql4->execute();
 
 			$stmt = $pdo->query("SELECT LAST_INSERT_ID() ");
 			$result2= $stmt->fetch(PDO::FETCH_ASSOC);
 			$id_m1= $result2['LAST_INSERT_ID()'];
-			echo $id_m1;
+		
 
 
 		}
@@ -256,7 +257,7 @@ function CreerGroupe($pdo,$nom,$adresse,$description,$createur,$motCle) {
 	//on parcourt le tableau des mots cle
 	foreach ($motCle as $attribut) {
 		//mots cles existants ?
-		echo $attribut;
+		
 
 		$exist=$pdo->prepare("SELECT * FROM competences WHERE nom='".$attribut."'");
 		$exist->execute();
@@ -266,11 +267,11 @@ function CreerGroupe($pdo,$nom,$adresse,$description,$createur,$motCle) {
 
 		//si la competence n existe pas			
 		if ($result1){
-			echo "deja fait!";
+			
 			$id_m = $result1['id_com'];
 		}else
 			{
-			echo "nul";
+			
 			//modif competence
 			$sql2 = $pdo->prepare("INSERT INTO competences (nom)  VALUES ('".$attribut."')");
 			$sql2->execute();
