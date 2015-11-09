@@ -1,5 +1,5 @@
 <?php include("doctype.php")?>
-        <title>Nom de la page</title>
+        <title>Projet</title>
     
     </head>
     <body>

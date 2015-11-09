@@ -7,7 +7,6 @@
         <?php include("head.php"); ?>
         <?php include("menu.php"); ?>
 		<?php include("pub.php"); ?>
-		<?php include("onglet.php"); ?>
 		<?php include("acces_base/utilitaire.php"); ?>
 		<?php
 		if (isset($_GET['id_in'])){
@@ -41,7 +40,11 @@
 		<br>
 		<fieldset>
 		<legend>Les projets auquels je participe : </legend>
-		Nom du projet : <?php echo $rowProjets["nom"]?>
+		Nom du projet : <?php echo $rowProjets["nom"]?> <br/>
+		<?php if (!isset($_GET['id_in'])) {?>
+		 <a href="form_proj.php"><button type="button" class="btn btn-success">Ajouter un projet</button></a>
+			<?php
+		}?>
 		</fieldset>
 		<br>
 		<fieldset>

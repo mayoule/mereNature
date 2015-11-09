@@ -139,7 +139,7 @@ function getXYFromInscrits($pdo)
 
  function CreerProjet($pdo,$nom,$adresse,$description,$fond_necessaires,$fond_actuels,$date_debut,$chef_de_projet,$motCle,$skill_useful) {	
 
- 	echo "on rentre ds la fonction";
+ 	
  	//recuperation des donnes du formulaire
 
 	$motCle = preg_split("/[\s,]+/", $_GET['motCle']);
@@ -157,7 +157,7 @@ function getXYFromInscrits($pdo)
 	$stmt = $pdo->query("SELECT LAST_INSERT_ID()");
 	$result= $stmt->fetch(PDO::FETCH_ASSOC);
 	$id_pro= $result['LAST_INSERT_ID()'];
-	echo "<p>Le projet a été ajouté</p>"
+	echo "<p>Le projet a été ajouté</p>";
 
 	//MOT CLES DU PROJET
 	//on parcourt le tableau des mots cle
